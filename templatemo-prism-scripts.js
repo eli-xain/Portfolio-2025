@@ -76,20 +76,38 @@ https://templatemo.com/tm-600-prism-flux
             }
         ];
 
-        // Skills data
+       // Skills data
         const skillsData = [
-            { name: 'React.js', icon: '⚛️', level: 95, category: 'frontend' },
-            { name: 'Node.js', icon: '🟢', level: 90, category: 'backend' },
-            { name: 'TypeScript', icon: '📘', level: 88, category: 'frontend' },
-            { name: 'AWS', icon: '☁️', level: 92, category: 'cloud' },
-            { name: 'Docker', icon: '🐳', level: 85, category: 'cloud' },
-            { name: 'Python', icon: '🐍', level: 93, category: 'backend' },
-            { name: 'Kubernetes', icon: '☸️', level: 82, category: 'cloud' },
-            { name: 'GraphQL', icon: '◈', level: 87, category: 'backend' },
-            { name: 'TensorFlow', icon: '🤖', level: 78, category: 'emerging' },
-            { name: 'Blockchain', icon: '🔗', level: 75, category: 'emerging' },
-            { name: 'Vue.js', icon: '💚', level: 85, category: 'frontend' },
-            { name: 'MongoDB', icon: '🍃', level: 90, category: 'backend' }
+            // Creative Skills
+            { name: 'Clip Studio Paint', icon: '🎨', level: 95, category: 'creative' },
+            { name: 'Moho Animation', icon: '✏️', level: 70, category: 'creative' },
+            { name: 'Canva', icon: '🖼️', level: 95, category: 'creative' },
+            { name: 'Adobe Photoshop', icon: '📸', level: 80, category: 'creative' },
+            { name: 'Adobe Premiere', icon: '🎬', level: 75, category: 'creative' },
+            { name: 'Autodesk Maya', icon: '🏛️', level: 65, category: 'creative' },
+            { name: 'Da Vinci Resolve', icon: '🎞️', level: 80, category: 'creative' },
+            { name: 'Figma', icon: '📐', level: 90, category: 'creative' },
+            { name: 'Blender', icon: '🧊', level: 70, category: 'creative' },
+            { name: 'Audacity', icon: '🎤', level: 90, category: 'creative' },
+            { name: 'Procreate', icon: '🖌️', level: 50, category: 'creative' },
+
+            // Technical Skills
+            { name: 'Unity', icon: '🎮', level: 60, category: 'technical' },
+            { name: 'GitHub', icon: '🐙', level: 80, category: 'technical' },
+            { name: 'Apache Netbeans', icon: '⚙️', level: 60, category: 'technical' },
+            { name: 'C#', icon: '#️⃣', level: 55, category: 'technical' },
+            { name: 'C++', icon: '++|', level: 70, category: 'technical' },
+            { name: 'CSS', icon: '💅', level: 75, category: 'technical' },
+            { name: 'Java', icon: '☕', level: 70, category: 'technical' },
+            { name: 'HTML', icon: '🌐', level: 80, category: 'technical' },
+            { name: 'Windows', icon: '🪟', level: 95, category: 'technical' },
+
+            // Workflow
+            { name: 'Notion', icon: '📝', level: 100, category: 'workflow' },
+            { name: 'Google Workspace', icon: '💼', level: 100, category: 'workflow' },
+            { name: 'Trello', icon: '📋', level: 95, category: 'workflow' },
+            { name: 'Milanote', icon: '💡', level: 85, category: 'workflow' },
+            { name: 'Microsoft Office 360', icon: '📊', level: 92, category: 'workflow' }
         ];
 
         // Scroll to section function
