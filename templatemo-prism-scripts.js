@@ -18,7 +18,7 @@ https://templatemo.com/tm-600-prism-flux
                 longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
                 image: 'images/neural-network.jpg',
                 tech: ['TensorFlow', 'Python', 'CUDA'],
-                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg', 'images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Placeholder gallery
+                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Cleaned placeholder gallery
             },
             {
                 id: 2,
@@ -64,6 +64,56 @@ https://templatemo.com/tm-600-prism-flux
                 image: 'images/ar-interface.jpg',
                 tech: ['Unity', 'ARCore', 'Computer Vision'],
                 galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
+            }
+        ];
+
+        // NEW Data for the Main Projects (Pillars)
+        const pillarData = [
+            {
+                id: 'Ashbone',
+                title: 'Ashbone',
+                description: 'A 2D Action RPG/Metroidvania game inspired by Hollow Knight and the souls-like genre. The game features an original narrative, challenging boss fights, and a complex upgrade system.',
+                longDescription: 'Ashbone is the culminating project of my studies—a challenging 2D action RPG. My primary role encompassed all level design, boss fight scripting in C#, and managing the tile-based world generation. It utilizes Unity’s 2D lighting system to create a moody atmosphere reflective of the \'Souls-like\' theme. The design philosophy centers on player mastery and environmental storytelling.',
+                tech: ['Unity', 'C#', 'Aseprite', 'Figma'],
+                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg'],
+            },
+            {
+                id: 'Karinder-NYA!',
+                title: 'Karinder-NYA!',
+                description: 'A fast-paced, 3D cooking and management game where players run a Filipino "karinderya" (eatery) managed by cats. Focuses on time management and quick recipe execution.',
+                longDescription: 'Developed during a 48-hour game jam, Karinder-NYA! focuses on rapid prototyping and user feedback integration. I handled all 3D asset modeling (Blender) and game programming (C#) for the core cooking loop, ensuring responsive controls and accurate score tracking. It was designed to be easily scalable with new recipes and assets.',
+                tech: ['Unity', 'C#', 'Blender', 'Photoshop'],
+                galleryImages: ['images/quantum-cloud.jpg', 'images/iot-matrix.jpg'],
+            },
+            {
+                id: 'Another I',
+                title: 'Another I',
+                description: 'A narrative-driven 2D puzzle platformer exploring themes of self-identity and mental health, requiring two characters to cooperate to solve puzzles.',
+                longDescription: 'This academic project was a deep dive into complex narrative design and player mechanics. The core innovation is the dual-character control system, where player actions must be synchronized. I was responsible for the sound design (Audacity), puzzle scripting, and ensuring the narrative branched correctly based on player choices, emphasizing an emotional connection to the themes.',
+                tech: ['Unity', 'C#', 'Visual Studio', 'Audacity'],
+                galleryImages: ['images/blockchain-vault.jpg', 'images/ar-interface.jpg'],
+            }
+        ];
+
+        // NEW Data for the Activities (Stats Section)
+        const activityData = [
+            {
+                id: 'sanguine',
+                title: 'SANGUINE SAPLINGS',
+                tech: ['Game Jam', 'Team Lead', 'Project Planning'],
+                itchioUrl: 'https://team-mysclick.itch.io/sanguine-saplings',
+            },
+            {
+                id: 'matchup',
+                title: 'MATCH-UP CHAMPIONSHIPP',
+                tech: ['Exhibition', 'Networking', 'Pitching'],
+                itchioUrl: 'https://mapuagameconsensus.itch.io/match-up-championship',
+            },
+            {
+                id: 'poperfish',
+                title: 'POP\'ER FISH!',
+                tech: ['Global Game Jam', 'Rapid Prototyping', 'Art & Design'],
+                itchioUrl: 'https://dyke-dog.itch.io/pop-er-fish',
             }
         ];
 
@@ -150,9 +200,7 @@ https://templatemo.com/tm-600-prism-flux
                     item.className = 'carousel-item';
                     item.dataset.index = index;
             
-                    // REMOVED techBadges variable and mapping for a simpler card view
-            
-                    // SIMPLIFIED CARD HTML (RE-ADDING SHORT DESCRIPTION)
+                    // SIMPLIFIED CARD HTML (RE-ADDED SHORT DESCRIPTION)
                     item.innerHTML = `
                         <div class="card">
                             <div class="card-number">0${data.id}</div>
@@ -298,18 +346,20 @@ https://templatemo.com/tm-600-prism-flux
                     ? skillsData 
                     : skillsData.filter(skill => skill.category === category);
                 
-                filteredSkills.forEach((skill, index) => {
+               filteredSkills.forEach((skill, index) => {
                     const hexagon = document.createElement('div');
-                    // ADDED title attribute here, on the main container
+                    // ADDED title attribute to main hexagon for full name on hover
                     hexagon.className = 'skill-hexagon';
                     hexagon.style.animationDelay = `${index * 0.1}s`;
-                    hexagon.setAttribute('title', skill.name); // <--- NEW LINE: Applies tooltip to the whole hexagon
+                    hexagon.setAttribute('title', skill.name);
                     
+                    // CORRECTED HTML STRUCTURE FOR SKILL BAR
                     hexagon.innerHTML = `
                         <div class="hexagon-inner">
                             <div class="hexagon-content">
                                 <div class="skill-icon-hex">${skill.icon}</div>
-                                <div class="skill-name-hex">${skill.name}</div> <div class="skill-level">
+                                <div class="skill-name-hex">${skill.name}</div>
+                                <div class="skill-level">
                                     <div class="skill-level-fill" style="width: ${skill.level}%"></div>
                                 </div>
                                 <div class="skill-percentage-hex">${skill.level}%</div>
@@ -332,16 +382,26 @@ https://templatemo.com/tm-600-prism-flux
             displaySkills();
         }
 
-        // Modal Functions (NEW)
+        // Modal Functions (UPDATED to handle both Carousel and Pillar data)
         const projectModal = document.getElementById('projectModal');
         const modalBody = projectModal ? projectModal.querySelector('.modal-body') : null;
         const closeModalBtn = document.getElementById('closeModalBtn');
 
-        function openProjectModal(projectId) {
-            const project = portfolioData.find(p => p.id === projectId);
+        function openProjectModal(projectIdentifier) {
+            let project;
 
+            // 1. Check if the identifier is a number (for carousel projects)
+            if (!isNaN(projectIdentifier)) {
+                project = portfolioData.find(p => p.id === parseInt(projectIdentifier));
+            }
+
+            // 2. If not found, check the pillar data (using string ID/title)
+            if (!project) {
+                 project = pillarData.find(p => p.id === projectIdentifier);
+            }
+            
             if (!project || !projectModal || !modalBody) {
-                console.error('Project data or modal elements not found.');
+                console.error('Project data or modal elements not found.', projectIdentifier);
                 return;
             }
             
@@ -350,8 +410,8 @@ https://templatemo.com/tm-600-prism-flux
                 `<span class="tech-badge">${tech}</span>`
             ).join('');
 
-            // NEW: Generate Gallery HTML
-            const galleryHtml = project.galleryImages.map(imgSrc => 
+            // Generate Gallery HTML (safely access galleryImages, falls back to empty array)
+            const galleryHtml = (project.galleryImages || []).map(imgSrc => 
                 `<img src="${imgSrc}" alt="${project.title} screenshot" class="gallery-image">`
             ).join('');
             
@@ -362,11 +422,11 @@ https://templatemo.com/tm-600-prism-flux
                 <h3>Project Showcase</h3>
                 <div class="project-gallery">${galleryHtml}</div>
 
-                <p><strong>Overview:</strong> ${project.description}</p>
+                <p><strong>Overview:</strong> ${project.description || 'No short overview available.'}</p>
                 <p>${project.longDescription}</p>
                 <div class="detail-meta">
-                    <p><strong>Category:</strong> Emerging Tech</p>
-                    <p><strong>Status:</strong> Active / Deployed</p>
+                    <p><strong>Type:</strong> ${typeof projectIdentifier === 'string' ? 'Main Academic Project' : 'Portfolio Showcase'}</p>
+                    <p><strong>Status:</strong> ${typeof projectIdentifier === 'string' ? 'Completed' : 'On-going'}</p>
                 </div>
                 <h3>Key Technologies</h3>
                 <div class="card-tech">${techBadges}</div>
@@ -404,8 +464,47 @@ https://templatemo.com/tm-600-prism-flux
                 }
             });
         }
+        
+        // NEW: Function to initialize buttons in the philosophy/pillar section
+        function initPillarButtons() {
+            const pillarButtons = document.querySelectorAll('.pillar-more-btn');
+            pillarButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectId = button.dataset.project;
+                    openProjectModal(projectId);
+                });
+            });
+        }
 
-        // Event listeners
+        // NEW: Function to render content into the stats section (activities)
+        function initActivityCards() {
+            const statCards = document.querySelectorAll('.stat-card-details');
+            
+            statCards.forEach((card, index) => {
+                const activity = activityData.find(a => a.id === card.dataset.activityId);
+                if (!activity) return;
+
+                // 1. Create Tech Badges
+                const techBadges = activity.tech.map(tech => 
+                    `<span class="tech-badge">${tech}</span>`
+                ).join('');
+                
+                // 2. Create itch.io button (using existing button style)
+                const itchIoButton = `
+                    <a href="${activity.itchioUrl}" target="_blank" rel="noopener noreferrer" class="stat-cta">
+                        itch.io ↗
+                    </a>
+                `;
+
+                // Insert elements into the card
+                card.innerHTML = `
+                    <div class="card-tech">${techBadges}</div>
+                    ${itchIoButton}
+                `;
+            });
+        }
+
+        // Event listeners (Update initialization calls)
         document.getElementById('nextBtn').addEventListener('click', nextSlide);
         document.getElementById('prevBtn').addEventListener('click', prevSlide);
 
@@ -431,6 +530,8 @@ https://templatemo.com/tm-600-prism-flux
         initCarousel();
         initSkillsGrid();
         initParticles();
+        initPillarButtons(); // NEW CALL
+        initActivityCards(); // NEW CALL
 
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -546,6 +647,7 @@ https://templatemo.com/tm-600-prism-flux
         // Form submission
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
             e.preventDefault();
             
             // Get form data
