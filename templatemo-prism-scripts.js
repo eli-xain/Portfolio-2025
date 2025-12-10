@@ -18,7 +18,7 @@ https://templatemo.com/tm-600-prism-flux
                 longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
                 image: 'images/neural-network.jpg',
                 tech: ['TensorFlow', 'Python', 'CUDA'],
-                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Placeholder gallery
+                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg', 'images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Placeholder gallery
             },
             {
                 id: 2,
@@ -152,7 +152,7 @@ https://templatemo.com/tm-600-prism-flux
             
                     // REMOVED techBadges variable and mapping for a simpler card view
             
-                    // SIMPLIFIED CARD HTML
+                    // SIMPLIFIED CARD HTML (RE-ADDING SHORT DESCRIPTION)
                     item.innerHTML = `
                         <div class="card">
                             <div class="card-number">0${data.id}</div>
@@ -160,6 +160,7 @@ https://templatemo.com/tm-600-prism-flux
                                 <img src="${data.image}" alt="${data.title}">
                             </div>
                             <h3 class="card-title">${data.title}</h3>
+                            <p class="card-description">${data.description}</p>
                             <button class="card-cta" onclick="openProjectModal(${data.id})">Explore</button>
                         </div>
                     `;
