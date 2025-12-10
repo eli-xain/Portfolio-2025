@@ -1006,10 +1006,10 @@ body::after {
 }
 
 .skill-hexagon {
-	width: 200px;
-	height: 230px;
+	width: 150px;
+	height: 170px;
 	position: relative;
-	margin: 30px 10px;
+	margin: 20px 5px;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
@@ -1049,8 +1049,8 @@ body::after {
 }
 
 .skill-icon-hex {
-	font-size: 48px;
-	margin-bottom: 15px;
+	font-size: 36px;
+	margin-bottom: 10px;
 	color: var(--accent-purple);
 	animation: float 3s ease-in-out infinite;
 }
@@ -1590,9 +1590,9 @@ a.info-item {
 	}
 
 	.skill-hexagon {
-		width: 150px;
-		height: 170px;
-		margin: 20px 5px;
+		width: 120px;
+		height: 140px;
+		margin: 15px 5px;
 	}
 
 	.skill-icon-hex {
