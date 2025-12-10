@@ -13,7 +13,7 @@ https://templatemo.com/tm-600-prism-flux
         const portfolioData = [
             {
                 id: 1,
-                title: 'Neural Network',
+                title: 'Illustrations',
                 description: 'Advanced AI system with deep learning capabilities for predictive analytics and pattern recognition.',
                 longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
                 image: 'images/neural-network.jpg',
@@ -22,7 +22,7 @@ https://templatemo.com/tm-600-prism-flux
             },
             {
                 id: 2,
-                title: 'Quantum Cloud',
+                title: '2D Game Sprites',
                 description: 'Next-generation cloud infrastructure leveraging quantum computing for unprecedented processing power.',
                 longDescription: 'A paradigm shift in infrastructure, the Quantum Cloud provides exponential performance gains over classical systems. Built on a hybrid architecture, it offers secure, scalable, and highly available resources for complex simulations, cryptographic cracking, and advanced machine learning tasks. This is the foundation for all future digital services.',
                 image: 'images/quantum-cloud.jpg',
@@ -31,7 +31,7 @@ https://templatemo.com/tm-600-prism-flux
             },
             {
                 id: 3,
-                title: 'Blockchain Vault',
+                title: 'Game Assets',
                 description: 'Secure decentralized storage solution using advanced encryption and distributed ledger technology.',
                 longDescription: 'This project is a high-security decentralized file storage solution. By distributing data across a private, permissioned blockchain, we ensure immutability and resistance to single points of failure. Every transaction and file retrieval is cryptographically logged, providing an unparalleled level of auditability and data integrity for sensitive records.',
                 image: 'images/blockchain-vault.jpg',
@@ -40,7 +40,7 @@ https://templatemo.com/tm-600-prism-flux
             },
             {
                 id: 4,
-                title: 'Cyber Defense',
+                title: '3D Models',
                 description: 'Military-grade cybersecurity framework with real-time threat detection and automated response.',
                 longDescription: 'Our Cyber Defense framework implements a Zero Trust model, where no user or device is trusted by default. It utilizes AI-powered behavioral analytics to identify and neutralize threats in milliseconds, providing an invisible, multi-layered shield against sophisticated cyber-attacks and ensuring continuous operational resilience.',
                 image: 'images/cyber-defense.jpg',
@@ -49,7 +49,7 @@ https://templatemo.com/tm-600-prism-flux
             },
             {
                 id: 5,
-                title: 'Data Nexus',
+                title: 'UI/UX Design',
                 description: 'Big data processing platform capable of analyzing petabytes of information in real-time.',
                 longDescription: 'Data Nexus is a scalable platform engineered to ingest, process, and analyze petabytes of heterogeneous data streams. Utilizing a unified pipeline with Apache Spark and Kafka, it delivers real-time insights for mission-critical applications, transforming raw information into actionable business intelligence.',
                 image: 'images/data-nexus.jpg',
@@ -58,21 +58,12 @@ https://templatemo.com/tm-600-prism-flux
             },
             {
                 id: 6,
-                title: 'AR Interface',
+                title: 'Academic Game Works',
                 description: 'Augmented reality system for immersive data visualization and interactive experiences.',
                 longDescription: 'The AR Interface projects complex data models and interactive controls directly into the user\'s field of view. Built with Unity and custom Computer Vision algorithms, it enhances productivity in engineering and design by allowing users to manipulate 3D models and real-time telemetry with natural gestures.',
                 image: 'images/ar-interface.jpg',
                 tech: ['Unity', 'ARCore', 'Computer Vision'],
                 galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
-            },
-            {
-                id: 7,
-                title: 'IoT Matrix',
-                description: 'Intelligent IoT ecosystem connecting millions of devices with edge computing capabilities.',
-                longDescription: 'IoT Matrix is the backbone for managing a massive fleet of connected devices. It incorporates Edge AI for local processing, reducing reliance on the cloud and ensuring ultra-low latency. The system is designed for massive scalability, utilizing the MQTT protocol for efficient, reliable, and secure device communication across a 5G network.',
-                image: 'images/iot-matrix.jpg',
-                tech: ['MQTT', 'Edge AI', '5G'],
-                galleryImages: ['images/iot-matrix.jpg', 'images/quantum-cloud.jpg', 'images/ar-interface.jpg'] // Placeholder gallery
             }
         ];
 
@@ -308,15 +299,16 @@ https://templatemo.com/tm-600-prism-flux
                 
                 filteredSkills.forEach((skill, index) => {
                     const hexagon = document.createElement('div');
+                    // ADDED title attribute here, on the main container
                     hexagon.className = 'skill-hexagon';
                     hexagon.style.animationDelay = `${index * 0.1}s`;
+                    hexagon.setAttribute('title', skill.name); // <--- NEW LINE: Applies tooltip to the whole hexagon
                     
                     hexagon.innerHTML = `
                         <div class="hexagon-inner">
                             <div class="hexagon-content">
                                 <div class="skill-icon-hex">${skill.icon}</div>
-                                <div class="skill-name-hex">${skill.name}</div>
-                                <div class="skill-level">
+                                <div class="skill-name-hex">${skill.name}</div> <div class="skill-level">
                                     <div class="skill-level-fill" style="width: ${skill.level}%"></div>
                                 </div>
                                 <div class="skill-percentage-hex">${skill.level}%</div>

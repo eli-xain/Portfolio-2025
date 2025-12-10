@@ -1068,13 +1068,19 @@ body::after {
 }
 
 .skill-name-hex {
-	font-size: 16px;
+	font-size: 13px; /* Kept small for fitting */
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: var(--text-primary);
 	margin-bottom: 10px;
 	text-align: center;
+    
+    /* NEW: Single-line Ellipsis Truncation */
+    white-space: nowrap;      /* Prevent the text from wrapping */
+    overflow: hidden;         /* Hide text that extends beyond the box */
+    text-overflow: ellipsis;  /* Show "..." for the clipped text */
+    max-width: 90%;           /* Ensure truncation works within the container */
 }
 
 .skill-level {
@@ -1091,7 +1097,7 @@ body::after {
 	background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
 	border-radius: 2px;
 	position: relative;
-	animation: fillLevel 2s ease-out;
+	animation: fillLevel 2s ease-out forwards;
 }
 
 @keyframes fillLevel {
@@ -1596,12 +1602,16 @@ a.info-item {
 	}
 
 	.skill-icon-hex {
-		font-size: 36px;
+		font-size: 30px;
 	}
 
 	.skill-name-hex {
-		font-size: 14px;
-	}
+        font-size: 11px; /* Further reduced size */
+        letter-spacing: 0.5px;
+        white-space: nowrap;      /* Crucial: ensure no wrapping */
+        overflow: hidden;         /* Crucial: hide overflow */
+        text-overflow: ellipsis;  /* Crucial: show ellipsis */
+    }
 
 	.footer-content {
 		grid-template-columns: 1fr;
