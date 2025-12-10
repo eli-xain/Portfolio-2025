@@ -8,7 +8,6 @@ https://templatemo.com/tm-600-prism-flux
 
 */
 
-
 // Portfolio data for carousel
 
         const portfolioData = [
@@ -18,7 +17,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Advanced AI system with deep learning capabilities for predictive analytics and pattern recognition.',
                 longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
                 image: 'images/neural-network.jpg',
-                tech: ['TensorFlow', 'Python', 'CUDA']
+                tech: ['TensorFlow', 'Python', 'CUDA'],
+                galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Placeholder gallery
             },
             {
                 id: 2,
@@ -26,7 +26,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Next-generation cloud infrastructure leveraging quantum computing for unprecedented processing power.',
                 longDescription: 'A paradigm shift in infrastructure, the Quantum Cloud provides exponential performance gains over classical systems. Built on a hybrid architecture, it offers secure, scalable, and highly available resources for complex simulations, cryptographic cracking, and advanced machine learning tasks. This is the foundation for all future digital services.',
                 image: 'images/quantum-cloud.jpg',
-                tech: ['AWS', 'Kubernetes', 'Docker']
+                tech: ['AWS', 'Kubernetes', 'Docker'],
+                galleryImages: ['images/quantum-cloud.jpg', 'images/iot-matrix.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
             },
             {
                 id: 3,
@@ -34,7 +35,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Secure decentralized storage solution using advanced encryption and distributed ledger technology.',
                 longDescription: 'This project is a high-security decentralized file storage solution. By distributing data across a private, permissioned blockchain, we ensure immutability and resistance to single points of failure. Every transaction and file retrieval is cryptographically logged, providing an unparalleled level of auditability and data integrity for sensitive records.',
                 image: 'images/blockchain-vault.jpg',
-                tech: ['Ethereum', 'Solidity', 'Web3']
+                tech: ['Ethereum', 'Solidity', 'Web3'],
+                galleryImages: ['images/blockchain-vault.jpg', 'images/neural-network.jpg', 'images/data-nexus.jpg'] // Placeholder gallery
             },
             {
                 id: 4,
@@ -42,7 +44,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Military-grade cybersecurity framework with real-time threat detection and automated response.',
                 longDescription: 'Our Cyber Defense framework implements a Zero Trust model, where no user or device is trusted by default. It utilizes AI-powered behavioral analytics to identify and neutralize threats in milliseconds, providing an invisible, multi-layered shield against sophisticated cyber-attacks and ensuring continuous operational resilience.',
                 image: 'images/cyber-defense.jpg',
-                tech: ['Zero Trust', 'AI Defense', 'Encryption']
+                tech: ['Zero Trust', 'AI Defense', 'Encryption'],
+                galleryImages: ['images/cyber-defense.jpg', 'images/ar-interface.jpg', 'images/quantum-cloud.jpg'] // Placeholder gallery
             },
             {
                 id: 5,
@@ -50,7 +53,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Big data processing platform capable of analyzing petabytes of information in real-time.',
                 longDescription: 'Data Nexus is a scalable platform engineered to ingest, process, and analyze petabytes of heterogeneous data streams. Utilizing a unified pipeline with Apache Spark and Kafka, it delivers real-time insights for mission-critical applications, transforming raw information into actionable business intelligence.',
                 image: 'images/data-nexus.jpg',
-                tech: ['Apache Spark', 'Hadoop', 'Kafka']
+                tech: ['Apache Spark', 'Hadoop', 'Kafka'],
+                galleryImages: ['images/data-nexus.jpg', 'images/iot-matrix.jpg', 'images/neural-network.jpg'] // Placeholder gallery
             },
             {
                 id: 6,
@@ -58,7 +62,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Augmented reality system for immersive data visualization and interactive experiences.',
                 longDescription: 'The AR Interface projects complex data models and interactive controls directly into the user\'s field of view. Built with Unity and custom Computer Vision algorithms, it enhances productivity in engineering and design by allowing users to manipulate 3D models and real-time telemetry with natural gestures.',
                 image: 'images/ar-interface.jpg',
-                tech: ['Unity', 'ARCore', 'Computer Vision']
+                tech: ['Unity', 'ARCore', 'Computer Vision'],
+                galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
             },
             {
                 id: 7,
@@ -66,7 +71,8 @@ https://templatemo.com/tm-600-prism-flux
                 description: 'Intelligent IoT ecosystem connecting millions of devices with edge computing capabilities.',
                 longDescription: 'IoT Matrix is the backbone for managing a massive fleet of connected devices. It incorporates Edge AI for local processing, reducing reliance on the cloud and ensuring ultra-low latency. The system is designed for massive scalability, utilizing the MQTT protocol for efficient, reliable, and secure device communication across a 5G network.',
                 image: 'images/iot-matrix.jpg',
-                tech: ['MQTT', 'Edge AI', '5G']
+                tech: ['MQTT', 'Edge AI', '5G'],
+                galleryImages: ['images/iot-matrix.jpg', 'images/quantum-cloud.jpg', 'images/ar-interface.jpg'] // Placeholder gallery
             }
         ];
 
@@ -131,93 +137,26 @@ https://templatemo.com/tm-600-prism-flux
         const indicatorsContainer = document.getElementById('indicators');
 
         function createCarouselItem(data, index) {
-            const item = document.createElement('div');
-            item.className = 'carousel-item';
-            item.dataset.index = index;
+                    const item = document.createElement('div');
+                    item.className = 'carousel-item';
+                    item.dataset.index = index;
             
-            const techBadges = data.tech.map(tech => 
-                `<span class="tech-badge">${tech}</span>`
-            ).join('');
+                    // REMOVED techBadges variable and mapping for a simpler card view
             
-            item.innerHTML = `
-                <div class="card">
-                    <div class="card-number">0${data.id}</div>
-                    <div class="card-image">
-                        <img src="${data.image}" alt="${data.title}">
-                    </div>
-                    <h3 class="card-title">${data.title}</h3>
-                    <p class="card-description">${data.description}</p>
-                    <div class="card-tech">${techBadges}</div>
-                    <button class="card-cta" onclick="openProjectModal(${data.id})">Explore</button>
-                </div>
-            `;
+                    // SIMPLIFIED CARD HTML
+                    item.innerHTML = `
+                        <div class="card">
+                            <div class="card-number">0${data.id}</div>
+                            <div class="card-image">
+                                <img src="${data.image}" alt="${data.title}">
+                            </div>
+                            <h3 class="card-title">${data.title}</h3>
+                            <button class="card-cta" onclick="openProjectModal(${data.id})">Explore</button>
+                        </div>
+                    `;
             
-            return item;
-        }
-
-        // Modal Functions
-        const projectModal = document.getElementById('projectModal');
-        const modalBody = projectModal ? projectModal.querySelector('.modal-body') : null;
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        function openProjectModal(projectId) {
-            const project = portfolioData.find(p => p.id === projectId);
-
-            if (!project || !projectModal || !modalBody) {
-                console.error('Project data or modal elements not found.');
-                return;
-            }
-            
-            // Generate the technology badges HTML
-            const techBadges = project.tech.map(tech => 
-                `<span class="tech-badge">${tech}</span>`
-            ).join('');
-            
-            // Populate modal with detailed project data
-            modalBody.innerHTML = `
-                <h2>${project.title}</h2>
-                <img src="${project.image}" alt="${project.title}" class="project-detail-image">
-                <p>${project.longDescription}</p>
-                <div class="detail-meta">
-                    <p><strong>Category:</strong> Emerging Tech</p>
-                    <p><strong>Status:</strong> Active / Deployed</p>
-                </div>
-                <h3>Key Technologies</h3>
-                <div class="card-tech">${techBadges}</div>
-            `;
-
-            // Display the modal and prevent background scrolling
-            projectModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            modalBody.scrollTop = 0; // Scroll modal content to top on open
-        }
-
-        function closeModal() {
-            if (projectModal) {
-                projectModal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        }
-        
-        // Modal Event Listeners
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', closeModal);
-        }
-
-        if (projectModal) {
-            // Close modal when clicking on the overlay background
-            projectModal.addEventListener('click', (e) => {
-                if (e.target.classList.contains('modal-overlay')) {
-                    closeModal();
-                }
-            });
-            // Close modal with 'Escape' key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && projectModal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        }
+                    return item;
+          }
 
         function initCarousel() {
             // Create carousel items
@@ -380,6 +319,79 @@ https://templatemo.com/tm-600-prism-flux
             });
             
             displaySkills();
+        }
+
+        // Modal Functions (NEW)
+        const projectModal = document.getElementById('projectModal');
+        const modalBody = projectModal ? projectModal.querySelector('.modal-body') : null;
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        function openProjectModal(projectId) {
+            const project = portfolioData.find(p => p.id === projectId);
+
+            if (!project || !projectModal || !modalBody) {
+                console.error('Project data or modal elements not found.');
+                return;
+            }
+            
+            // Generate the technology badges HTML for the pop-up
+            const techBadges = project.tech.map(tech => 
+                `<span class="tech-badge">${tech}</span>`
+            ).join('');
+
+            // NEW: Generate Gallery HTML
+            const galleryHtml = project.galleryImages.map(imgSrc => 
+                `<img src="${imgSrc}" alt="${project.title} screenshot" class="gallery-image">`
+            ).join('');
+            
+            // Populate modal with detailed project data
+            modalBody.innerHTML = `
+                <h2>${project.title}</h2>
+                
+                <h3>Project Showcase</h3>
+                <div class="project-gallery">${galleryHtml}</div>
+
+                <p><strong>Overview:</strong> ${project.description}</p>
+                <p>${project.longDescription}</p>
+                <div class="detail-meta">
+                    <p><strong>Category:</strong> Emerging Tech</p>
+                    <p><strong>Status:</strong> Active / Deployed</p>
+                </div>
+                <h3>Key Technologies</h3>
+                <div class="card-tech">${techBadges}</div>
+            `;
+
+            // Display the modal and prevent background scrolling
+            projectModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modalBody.scrollTop = 0; // Scroll modal content to top on open
+        }
+
+        function closeModal() {
+            if (projectModal) {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+        
+        // Modal Event Listeners
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+
+        if (projectModal) {
+            // Close modal when clicking on the overlay background
+            projectModal.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal-overlay')) {
+                    closeModal();
+                }
+            });
+            // Close modal with 'Escape' key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
         }
 
         // Event listeners
