@@ -123,6 +123,7 @@ body::after {
 	text-align: center;
 }
 
+/*
 .loader-prism {
 	width: 100px;
 	height: 100px;
@@ -138,6 +139,7 @@ body::after {
 	transform-origin: center;
 	animation: prismRotate 3s linear infinite;
 }
+
 
 .prism-face:nth-child(1) {
 	border-image: linear-gradient(45deg, var(--accent-red), var(--accent-blue)) 1;
@@ -169,6 +171,7 @@ body::after {
 		transform: rotate(360deg) scale(1);
 	}
 }
+*/
 
 /* Navigation Header */
 .header {
@@ -1940,3 +1943,20 @@ a.info-item {
         padding: 8px 20px;
     }
 }
+
+/* --- NEW MEDIA LOADER STYLES --- */
+.custom-loader-media {
+	width: 150px; /* Define the size of your GIF/Video area */
+	height: 150px;
+	position: relative;
+	margin: 0 auto 30px;
+}
+
+/* Style for any media inside the custom container */
+.custom-loader-media img,
+.custom-loader-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures media fits correctly */
+}
+/* Ensure the original animation styles for the prism are removed */
