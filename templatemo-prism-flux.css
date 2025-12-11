@@ -1160,6 +1160,7 @@ body::after {
 	position: relative;
 }
 
+/*
 .contact-container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -1167,6 +1168,16 @@ body::after {
 	grid-template-columns: 1fr 1fr;
 	gap: 60px;
 	align-items: start;
+}
+*/
+
+.contact-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex; /* Changed from grid to flex */
+	justify-content: center; /* Centers the item horizontally */
+	align-items: center; /* Centers the item vertically if needed */
+	padding-bottom: 50px; /* Adds some space at the bottom */
 }
 
 .contact-info {
@@ -1735,22 +1746,45 @@ a.info-item {
     object-fit: cover;
 }
 
-	/* RESPONSIVE */
-	/* @media (max-width: 900px) {
-		.intro-container {
-			flex-direction: column-reverse;
-			text-align: center;
-		}
+/* --- RESPONSIVE INTRO SECTION --- */
+@media (max-width: 900px) {
+	/* 1. Allow the section to grow vertically so content fits */
+	.intro-section {
+		height: auto;
+		min-height: 100vh;
+		padding: 120px 20px 50px 20px; /* Top, Right, Bottom, Left */
+	}
 
-		.intro-photo {
-			width: 260px;
-			height: 260px;
-		}
+	/* 2. Stack the Photo and Text vertically */
+	.intro-container {
+		flex-direction: column-reverse;
+		text-align: center;
+		gap: 40px;
+	}
 
-		.intro-name {
-			font-size: 48px;
-		}
-	} */
+	/* 3. Resize the photo for mobile */
+	.intro-photo {
+		width: 250px;
+		height: 250px;
+		margin: 0 auto; /* Ensure it stays centered */
+	}
+
+	/* 4. Adjust font sizes so they don't break lines awkwardly */
+	.intro-name {
+		font-size: 42px;
+		letter-spacing: 2px;
+	}
+
+	.intro-desc {
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+
+	/* 5. Center the buttons */
+	.intro-buttons {
+		justify-content: center;
+	}
+}
 
 /* --- Modal/Overlay Styles for Project Details --- */
 
@@ -1960,3 +1994,44 @@ a.info-item {
     object-fit: contain; /* Ensures media fits correctly */
 }
 /* Ensure the original animation styles for the prism are removed */
+
+/* --- Smart Scroll Button Styles --- */
+.smart-scroll-btn {
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	width: 100px;
+	height: 100px;
+	background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+	color: var(--text-primary);
+	border: 2px solid var(--metal-dark);
+	border-radius: 50%;
+	font-size: 48px;
+	font-weight: bold;
+	cursor: pointer;
+	z-index: 9999;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.5;
+}
+
+	.smart-scroll-btn:hover {
+		transform: scale(1.15) translateY(-5px);
+		box-shadow: 0 0 25px rgba(153, 69, 255, 0.6);
+		border-color: var(--accent-cyan);
+		opacity: 1;
+	}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+	.smart-scroll-btn {
+		bottom: 30px;
+		right: 30px;
+		width: 55px;
+		height: 55px;
+		font-size: 20px;
+	}
+}

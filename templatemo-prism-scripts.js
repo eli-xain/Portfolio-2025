@@ -504,6 +504,7 @@ https://templatemo.com/tm-600-prism-flux
             });
         }
 
+
         // Event listeners (Update initialization calls)
         document.getElementById('nextBtn').addEventListener('click', nextSlide);
         document.getElementById('prevBtn').addEventListener('click', prevSlide);
@@ -645,21 +646,21 @@ https://templatemo.com/tm-600-prism-flux
         }
 
         // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            e.preventDefault();
+        //const contactForm = document.getElementById('contactForm');
+        //contactForm.addEventListener('submit', (e) => {
+        //    e.preventDefault();
+        //    e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+        //    // Get form data
+        //    const formData = new FormData(contactForm);
+        //    const data = Object.fromEntries(formData);
             
-            // Show success message
-            alert(`Thank you ${data.name}! Your message has been transmitted successfully. We'll respond within 24 hours.`);
+        //    // Show success message
+        //    alert(`Thank you ${data.name}! Your message has been transmitted successfully. We'll respond within 24 hours.`);
             
-            // Reset form
-            contactForm.reset();
-        });
+        //    // Reset form
+        //    contactForm.reset();
+        //});
 
         // Loading screen
         window.addEventListener('load', () => {
@@ -677,3 +678,48 @@ https://templatemo.com/tm-600-prism-flux
                 parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
+
+        // --- Smart Scroll Button Logic ---
+        const scrollBtn = document.getElementById('smartScrollBtn');
+
+        function updateScrollButton() {
+            // Calculate total scrollable height vs current position
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.scrollY;
+
+            // Check if we are past the halfway point of the page
+            if (currentScroll > totalHeight / 2) {
+                // We are near the bottom -> Switch to "UP" mode
+                scrollBtn.innerHTML = "⬆";
+                scrollBtn.title = "Scroll to Top";
+                scrollBtn.setAttribute('data-dir', 'up');
+            } else {
+                // We are near the top -> Switch to "DOWN" mode
+                scrollBtn.innerHTML = "⬇";
+                scrollBtn.title = "Scroll to Bottom";
+                scrollBtn.setAttribute('data-dir', 'down');
+            }
+        }
+
+        if (scrollBtn) {
+            // Add Click Event
+            scrollBtn.addEventListener('click', () => {
+                const direction = scrollBtn.getAttribute('data-dir');
+
+                if (direction === 'up') {
+                    // Scroll to Top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    // Scroll to Bottom
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }
+            });
+
+            // Update button appearance whenever the user scrolls
+            window.addEventListener('scroll', updateScrollButton);
+
+            // Initialize on page load
+            updateScrollButton();
+        }
+
+        
