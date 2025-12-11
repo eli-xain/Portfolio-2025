@@ -1364,11 +1364,23 @@ a.info-item {
             padding-left: 10px;
         }
 
+        /*
 .footer-bottom {
     padding-top: 30px;
     border-top: 1px solid var(--metal-dark);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+*/
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid var(--metal-dark);
+    display: flex;
+    justify-content: flex-end; /* <--- This pushes everything to the RIGHT */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -1780,19 +1792,21 @@ a.info-item {
         text-align: center;
     }
 
-/* NEW Gallery Styles */
+/* NEW Gallery Styles - Adaptive Masonry Layout */
 .project-gallery {
-    display: grid;
-    /* Create a responsive grid with minimum 280px wide columns */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    /* Switch from Grid to Columns for the masonry effect */
+    column-count: 3;
+    column-gap: 20px;
     margin-bottom: 30px;
 }
 
 .gallery-image {
     width: 100%;
-    height: 200px; /* Uniform height for a clean grid look */
-    object-fit: cover;
+    height: auto; /* VITAL: Lets the image define its own height */
+    display: block; /* Removes weird bottom spacing */
+    margin-bottom: 20px; /* Adds vertical space between images */
+    /* Prevents the image from being sliced in half between columns */
+    break-inside: avoid;
     border-radius: 10px;
     border: 1px solid var(--metal-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1802,7 +1816,15 @@ a.info-item {
     .gallery-image:hover {
         transform: scale(1.03);
         box-shadow: 0 0 15px rgba(153, 69, 255, 0.4);
+        z-index: 2; /* Ensures zoomed image floats above others */
     }
+
+/* Responsive adjustment for Mobile (otherwise 3 columns is too small) */
+@media (max-width: 768px) {
+    .project-gallery {
+        column-count: 1; /* Stack vertically on phones */
+    }
+}
 
 .modal-body p {
     font-size: 16px;

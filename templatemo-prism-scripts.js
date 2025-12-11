@@ -16,22 +16,43 @@ const portfolioData = [
         title: 'Illustrations',
         description: 'Advanced AI system with deep learning capabilities for predictive analytics and pattern recognition.',
         longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
-        image: 'images/neural-network.jpg',
-        tech: ['TensorFlow', 'Python', 'CUDA'],
-        galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg', 'images/cyber-defense.jpg'] // Cleaned placeholder gallery
+        image: 'images/illus/Sylveon.png',
+        tech: ['Clip Studio Paint', 'Adobe Photoshop', 'Procreate', 'Medibang'],
+        galleryImages: [
+            'images/illus/D2 Exchange Gift(Art).png',
+            'images/illus/PokemonCard1.jpg',
+            'images/illus/Self-Portrait.png',
+            'images/illus/Sylveon.png',
+            'images/illus/IsometricRoom-Academic.png',
+            'images/illus/Self-Portrait_Parody.png',
+            'images/illus/Commission2.png',
+            'images/illus/Commission.png',
+            'images/illus/FanArt.png',
+            'images/illus/Female Mapua - Pokemon.png',
+            'images/illus/Male Mapua - Pokemon.png'
+        ],
+        status: "N/A",
+        type: "Portfolio Showcase" 
     },
     {
         id: 2,
         title: '2D Game Sprites',
         description: 'Next-generation cloud infrastructure leveraging quantum computing for unprecedented processing power.',
         longDescription: 'A paradigm shift in infrastructure, the Quantum Cloud provides exponential performance gains over classical systems. Built on a hybrid architecture, it offers secure, scalable, and highly available resources for complex simulations, cryptographic cracking, and advanced machine learning tasks. This is the foundation for all future digital services.',
-        image: 'images/quantum-cloud.jpg',
+        image: 'images/game-sprite/Splice Art2.png',
         tech: ['AWS', 'Kubernetes', 'Docker'],
-        galleryImages: ['images/quantum-cloud.jpg', 'images/iot-matrix.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
+        galleryImages: [
+            'images/game-sprite/Splice Art.png',
+            'images/game-sprite/Didon Sprite.png',
+            'images/game-sprite/Sanguin Saplings Sprites.gif',
+            'images/game-sprite/Splice Art2.png',
+        ],
+        status: "N/A",
+        type: "Portfolio Showcase" 
     },
     {
         id: 3,
-        title: 'Game Assets',
+        title: 'Other Game Assets',
         description: 'Secure decentralized storage solution using advanced encryption and distributed ledger technology.',
         longDescription: 'This project is a high-security decentralized file storage solution. By distributing data across a private, permissioned blockchain, we ensure immutability and resistance to single points of failure. Every transaction and file retrieval is cryptographically logged, providing an unparalleled level of auditability and data integrity for sensitive records.',
         image: 'images/blockchain-vault.jpg',
@@ -417,20 +438,19 @@ function openProjectModal(projectIdentifier) {
 
     // Populate modal with detailed project data
     modalBody.innerHTML = `
-                <h2>${project.title}</h2>
-                
-                <h3>Project Showcase</h3>
-                <div class="project-gallery">${galleryHtml}</div>
+        <h2>${project.title}</h2>
+    
+        <h3>Showcase</h3>
+        <div class="project-gallery">${galleryHtml}</div>
 
-                <p><strong>Overview:</strong> ${project.description || 'No short overview available.'}</p>
-                <p>${project.longDescription}</p>
-                <div class="detail-meta">
-                    <p><strong>Type:</strong> ${typeof projectIdentifier === 'string' ? 'Main Academic Project' : 'Portfolio Showcase'}</p>
-                    <p><strong>Status:</strong> ${typeof projectIdentifier === 'string' ? 'Completed' : 'On-going'}</p>
-                </div>
-                <h3>Key Technologies</h3>
-                <div class="card-tech">${techBadges}</div>
-            `;
+        <p>${project.longDescription}</p>
+        <div class="detail-meta">
+            <p><strong>Type:</strong> ${project.type}</p>
+            <p><strong>Status:</strong> ${project.status}</p>
+        </div>
+        <h3>Key Technologies</h3>
+        <div class="card-tech">${techBadges}</div>
+    `;
 
     // Display the modal and prevent background scrolling
     projectModal.classList.add('active');
