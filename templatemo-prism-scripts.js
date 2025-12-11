@@ -14,10 +14,10 @@ const portfolioData = [
     {
         id: 1,
         title: 'Illustrations',
-        description: 'Advanced AI system with deep learning capabilities for predictive analytics and pattern recognition.',
-        longDescription: 'The core of our AI strategy, this Neural Network uses a multi-layered architecture to process vast datasets. It is trained on proprietary algorithms to achieve state-of-the-art accuracy in forecasting and anomaly detection. Its deployment in the Quantum Cloud minimizes latency and maximizes computational efficiency, making real-time decision-making a reality.',
+        description: '',
+        longDescription: '',
         image: 'images/illus/Sylveon.png',
-        tech: ['Clip Studio Paint', 'Adobe Photoshop', 'Procreate', 'Medibang'],
+        tech: ['Clip Studio Paint', 'Adobe Photoshop', 'Procreate', 'Medibang', 'Portraits', 'Stylized Art', 'Semi-Realism', 'Design'],
         galleryImages: [
             'images/illus/D2 Exchange Gift(Art).png',
             'images/illus/PokemonCard1.jpg',
@@ -29,7 +29,13 @@ const portfolioData = [
             'images/illus/Commission.png',
             'images/illus/FanArt.png',
             'images/illus/Female Mapua - Pokemon.png',
-            'images/illus/Male Mapua - Pokemon.png'
+            'images/illus/Male Mapua - Pokemon.png',
+            'images/illus/OC-Art.png',
+            'images/illus/RobertFanart.png',
+            'images/illus/AngryArt.png',
+            'images/illus/CharacterDesign.png',
+            'images/illus/Self-Portrait2.png',
+            'images/illus/Self-Portrait3.png'
         ],
         status: "N/A",
         type: "Portfolio Showcase" 
@@ -37,55 +43,89 @@ const portfolioData = [
     {
         id: 2,
         title: '2D Game Sprites',
-        description: 'Next-generation cloud infrastructure leveraging quantum computing for unprecedented processing power.',
-        longDescription: 'A paradigm shift in infrastructure, the Quantum Cloud provides exponential performance gains over classical systems. Built on a hybrid architecture, it offers secure, scalable, and highly available resources for complex simulations, cryptographic cracking, and advanced machine learning tasks. This is the foundation for all future digital services.',
+        description: '',
+        longDescription: '',
         image: 'images/game-sprite/Splice Art2.png',
-        tech: ['AWS', 'Kubernetes', 'Docker'],
+        tech: ['Clip Studio Paint'],
         galleryImages: [
-            'images/game-sprite/Splice Art.png',
             'images/game-sprite/Didon Sprite.png',
             'images/game-sprite/Sanguin Saplings Sprites.gif',
             'images/game-sprite/Splice Art2.png',
+            'images/game-sprite/Rigged Character Sprite.gif',
+             'images/game-sprite/Pixel-Sprite.png',
+             'images/game-sprite/Sprite-CashStaticStandSbeet.png',
+             'images/game-sprite/MonsterIdle-960px.png',
+            'images/game-sprite/Monster-Idle(2SecLoop).gif',
+            'images/game-sprite/MonsterDamage-960px.png'
         ],
+        layout: 'single',
+        secondGallery: {
+        title: 'Full Sprites', 
+        layout: 'list',                     
+        images: [
+            'images/game-sprite/Splice Art.png',
+            'images/game-sprite/Elle - MUC Visual Novel Sprites.png',
+            'images/game-sprite/KC - MUC Visual Novel Sprites.png',
+            'images/game-sprite/Jamie - MUC Visual Novel Sprites.png',
+            'images/game-sprite/MUC Visual Novel Sprites.png'
+        ]
+        },
         status: "N/A",
         type: "Portfolio Showcase" 
     },
     {
         id: 3,
         title: 'Other Game Assets',
-        description: 'Secure decentralized storage solution using advanced encryption and distributed ledger technology.',
-        longDescription: 'This project is a high-security decentralized file storage solution. By distributing data across a private, permissioned blockchain, we ensure immutability and resistance to single points of failure. Every transaction and file retrieval is cryptographically logged, providing an unparalleled level of auditability and data integrity for sensitive records.',
-        image: 'images/blockchain-vault.jpg',
-        tech: ['Ethereum', 'Solidity', 'Web3'],
-        galleryImages: ['images/blockchain-vault.jpg', 'images/neural-network.jpg', 'images/data-nexus.jpg'] // Placeholder gallery
+        description: '',
+        longDescription: '',
+        image: 'images/game-asset/Splash Screen - Didon.gif',
+        tech: ['Clip Studio Paint'],
+        galleryImages: [
+            'images/game-asset/Menu Splash Screen Art - Didon UPLB Game Jam 2024.png',
+            'images/game-asset/Menu Splash Screen Art - Sanguine Saplings GJ+ 2023.png',
+            'images/game-asset/Splash Screen - Didon.gif',
+            'images/game-asset/Menu Splash - Sample.png',
+            'images/game-asset/Spear-Sillhoute Design.png'
+        ],
+        status: "N/A",
+        type: "Portfolio Showcase" 
     },
     {
         id: 4,
         title: '3D Models',
-        description: 'Military-grade cybersecurity framework with real-time threat detection and automated response.',
-        longDescription: 'Our Cyber Defense framework implements a Zero Trust model, where no user or device is trusted by default. It utilizes AI-powered behavioral analytics to identify and neutralize threats in milliseconds, providing an invisible, multi-layered shield against sophisticated cyber-attacks and ensuring continuous operational resilience.',
-        image: 'images/cyber-defense.jpg',
-        tech: ['Zero Trust', 'AI Defense', 'Encryption'],
-        galleryImages: ['images/cyber-defense.jpg', 'images/ar-interface.jpg', 'images/quantum-cloud.jpg'] // Placeholder gallery
+        description: '',
+        longDescription: '',
+        image: 'images/3d/IsometricRoom3D-2.jpg',
+        tech: ['Autodesk Maya'],
+         galleryImages: [
+            'images/3d/Academic3D.png',
+            'images/3d/Academic3D-2.png',
+            'images/3d/Academic3D-3.jpg',
+            'images/3d/IsometricRoom3D.jpg',
+            'images/3d/IsometricRoom3D-2.jpg',
+            'images/3d/MGC-3DLogo.jpg'
+        ],
+        status: "N/A",
+        type: "Portfolio Showcase"
     },
-    {
-        id: 5,
-        title: 'UI/UX Design',
-        description: 'Big data processing platform capable of analyzing petabytes of information in real-time.',
-        longDescription: 'Data Nexus is a scalable platform engineered to ingest, process, and analyze petabytes of heterogeneous data streams. Utilizing a unified pipeline with Apache Spark and Kafka, it delivers real-time insights for mission-critical applications, transforming raw information into actionable business intelligence.',
-        image: 'images/data-nexus.jpg',
-        tech: ['Apache Spark', 'Hadoop', 'Kafka'],
-        galleryImages: ['images/data-nexus.jpg', 'images/iot-matrix.jpg', 'images/neural-network.jpg'] // Placeholder gallery
-    },
-    {
-        id: 6,
-        title: 'Academic Game Works',
-        description: 'Augmented reality system for immersive data visualization and interactive experiences.',
-        longDescription: 'The AR Interface projects complex data models and interactive controls directly into the user\'s field of view. Built with Unity and custom Computer Vision algorithms, it enhances productivity in engineering and design by allowing users to manipulate 3D models and real-time telemetry with natural gestures.',
-        image: 'images/ar-interface.jpg',
-        tech: ['Unity', 'ARCore', 'Computer Vision'],
-        galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
-    }
+    //{
+     //   id: 5,
+    //    title: 'Graphic Design (UI/Marketing)',
+    //    description: 'Big data processing platform capable of analyzing petabytes of information in real-time.',
+     //   longDescription: 'Data Nexus is a scalable platform engineered to ingest, process, and analyze petabytes of heterogeneous data streams. Utilizing a unified pipeline with Apache Spark and Kafka, it delivers real-time insights for mission-critical applications, transforming raw information into actionable business intelligence.',
+    //    image: 'images/data-nexus.jpg',
+     //   tech: ['Apache Spark', 'Hadoop', 'Kafka'],
+    //    galleryImages: ['images/data-nexus.jpg', 'images/iot-matrix.jpg', 'images/neural-network.jpg'] // Placeholder gallery
+    //},
+    //{
+    //    id: 6,
+    //    title: 'Academic Game Works',
+    //    description: 'Augmented reality system for immersive data visualization and interactive experiences.',
+    //    longDescription: 'The AR Interface projects complex data models and interactive controls directly into the user\'s field of view. Built with Unity and custom Computer Vision algorithms, it enhances productivity in engineering and design by allowing users to manipulate 3D models and real-time telemetry with natural gestures.',
+    //    image: 'images/ar-interface.jpg',
+    //    tech: ['Unity', 'ARCore', 'Computer Vision'],
+    //   galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
+    //}
 ];
 
 // NEW Data for the Main Projects (Pillars)
@@ -93,26 +133,32 @@ const pillarData = [
     {
         id: 'Ashbone',
         title: 'Ashbone',
-        description: 'A 2D Action RPG/Metroidvania game inspired by Hollow Knight and the souls-like genre. The game features an original narrative, challenging boss fights, and a complex upgrade system.',
-        longDescription: 'Ashbone is the culminating project of my studies—a challenging 2D action RPG. My primary role encompassed all level design, boss fight scripting in C#, and managing the tile-based world generation. It utilizes Unity’s 2D lighting system to create a moody atmosphere reflective of the \'Souls-like\' theme. The design philosophy centers on player mastery and environmental storytelling.',
-        tech: ['Unity', 'C#', 'Aseprite', 'Figma'],
-        galleryImages: ['images/neural-network.jpg', 'images/data-nexus.jpg'],
+        longDescription: 'Play as a shadow-born hunter in the decaying city of Ashbone, tasked by a White Lady to purge corrupted Marbles. Master swift hack-and-slash combat and the devastating Black Flame to restore balance. But beware: a mysterious purple figure from your past waits in the darkness, forcing you to question the truth of your mission.',
+        externalLink: 'https://drive.google.com/file/d/1fDff2garUGvA7fkIZmbcSUcQOWmq0iKe/view?usp=sharing',
+        tech: ['Unity', 'C#', 'Clip Studio Paint', 'Figma', 'UI/UX Design', 'Moho Animation', 'Character Design', 'Technical Artist/Programmer', 'Game Design', 'Game Pitch'],
+        galleryImages: [''],
+        status: "On-Hold",
+        type: "Game Development"
     },
     {
         id: 'Karinder-NYA!',
         title: 'Karinder-NYA!',
-        description: 'A fast-paced, 3D cooking and management game where players run a Filipino "karinderya" (eatery) managed by cats. Focuses on time management and quick recipe execution.',
-        longDescription: 'Developed during a 48-hour game jam, Karinder-NYA! focuses on rapid prototyping and user feedback integration. I handled all 3D asset modeling (Blender) and game programming (C#) for the core cooking loop, ensuring responsive controls and accurate score tracking. It was designed to be easily scalable with new recipes and assets.',
-        tech: ['Unity', 'C#', 'Blender', 'Photoshop'],
-        galleryImages: ['images/quantum-cloud.jpg', 'images/iot-matrix.jpg'],
+        longDescription: 'Play as Aling Kitty, a cute middle-aged cat lady, surviving her way through cooking popular Karinderya Menus! Ensure her in overcoming challenges and sell enough for each day through a full interactive and fun game.',
+        externalLink: 'https://drive.google.com/file/d/10239Y7Mq_dI9AHg-8TxRHAPoODMGDYbm/view?usp=sharing',
+        tech: ['Unity', 'C#', 'Blender', 'Clip Studio Paint', 'Figma', 'Autodesk Maya', 'Game Design', 'Environment Design', 'UI/UX', 'Technical Programmer', 'Task Management'],
+        galleryImages: [''],
+        status: "Ongoing as Capstone",
+        type: "Game Production"
     },
     {
         id: 'Another I',
         title: 'Another I',
-        description: 'A narrative-driven 2D puzzle platformer exploring themes of self-identity and mental health, requiring two characters to cooperate to solve puzzles.',
-        longDescription: 'This academic project was a deep dive into complex narrative design and player mechanics. The core innovation is the dual-character control system, where player actions must be synchronized. I was responsible for the sound design (Audacity), puzzle scripting, and ensuring the narrative branched correctly based on player choices, emphasizing an emotional connection to the themes.',
-        tech: ['Unity', 'C#', 'Visual Studio', 'Audacity'],
-        galleryImages: ['images/blockchain-vault.jpg', 'images/ar-interface.jpg'],
+        longDescription: 'Navigate Iris between the truths and visions under the weight of her psyche. Her quest to form her first true connection becomes a battle against the encroaching darkness of her mind and impending graduation that pushes her over the edge.',
+        externalLink: 'https://drive.google.com/file/d/16oh94juQc82K_J1_8PHvMxN8ogVsKLTG/view?usp=sharing',
+        tech: ['Clip Studio Paint', 'Game Design', 'Character Design', 'Project Management'],
+        galleryImages: [''],
+        status: "Discontinued",
+        type: "Game Design"
     }
 ];
 
@@ -121,19 +167,19 @@ const activityData = [
     {
         id: 'sanguine',
         title: 'SANGUINE SAPLINGS',
-        tech: ['Game Jam', 'Team Lead', 'Project Planning'],
+        tech: ['Game Jam', 'Character Design', '2D Sprite Animation'],
         itchioUrl: 'https://team-mysclick.itch.io/sanguine-saplings',
     },
     {
         id: 'matchup',
         title: 'MATCH-UP CHAMPIONSHIPP',
-        tech: ['Exhibition', 'Networking', 'Pitching'],
+        tech: ['Character Design', 'Visual Novel Sprites', 'Splice', 'Task Assignment'],
         itchioUrl: 'https://mapuagameconsensus.itch.io/match-up-championship',
     },
     {
         id: 'poperfish',
         title: 'POP\'ER FISH!',
-        tech: ['Global Game Jam', 'Rapid Prototyping', 'Art & Design'],
+        tech: ['Global Game Jam', 'Assistant Leader', '2D Sprite Animation', 'Splash Menu Art', 'UI Assistant'],
         itchioUrl: 'https://dyke-dog.itch.io/pop-er-fish',
     }
 ];
@@ -230,7 +276,7 @@ function createCarouselItem(data, index) {
                             </div>
                             <h3 class="card-title">${data.title}</h3>
                             <p class="card-description">${data.description}</p>
-                            <button class="card-cta" onclick="openProjectModal(${data.id})">Explore</button>
+                            <button class="card-cta" onclick="openProjectModal(${data.id})">View Gallery</button>
                         </div>
                     `;
 
@@ -415,7 +461,6 @@ function openProjectModal(projectIdentifier) {
     if (!isNaN(projectIdentifier)) {
         project = portfolioData.find(p => p.id === parseInt(projectIdentifier));
     }
-
     // 2. If not found, check the pillar data (using string ID/title)
     if (!project) {
         project = pillarData.find(p => p.id === projectIdentifier);
@@ -426,36 +471,74 @@ function openProjectModal(projectIdentifier) {
         return;
     }
 
-    // Generate the technology badges HTML for the pop-up
-    const techBadges = project.tech.map(tech =>
+    // --- 1. SETUP GALLERIES (From previous steps) ---
+    const mainClass = (project.layout === 'list') ? 'list-view' : '';
+    const mainGalleryHtml = (project.galleryImages || []).map(imgSrc =>
+        `<img src="${imgSrc}" alt="${project.title} image" class="gallery-image">`
+    ).join('');
+
+    let secondGalleryHtml = '';
+    if (project.secondGallery) {
+        const secClass = (project.secondGallery.layout === 'list') ? 'list-view' : '';
+        const secImages = project.secondGallery.images.map(imgSrc => 
+            `<img src="${imgSrc}" alt="Secondary gallery image" class="gallery-image">`
+        ).join('');
+
+        secondGalleryHtml = `
+            <h3 style="margin-top: 40px; color: var(--accent-cyan);">
+                ${project.secondGallery.title || 'Additional Images'}
+            </h3>
+            <div class="project-gallery ${secClass}">
+                ${secImages}
+            </div>
+        `;
+    }
+
+    // --- 2. GENERATE TECH BADGES ---
+    const techBadges = (project.tech || []).map(tech =>
         `<span class="tech-badge">${tech}</span>`
     ).join('');
 
-    // Generate Gallery HTML (safely access galleryImages, falls back to empty array)
-    const galleryHtml = (project.galleryImages || []).map(imgSrc =>
-        `<img src="${imgSrc}" alt="${project.title} screenshot" class="gallery-image">`
-    ).join('');
+    // --- 3. NEW: GENERATE EXTERNAL LINK BUTTON ---
+    let linkButtonHtml = '';
+    if (project.externalLink) {
+        linkButtonHtml = `
+            <div style="margin-top: 30px; text-align: center; border-top: 1px dashed var(--metal-dark); padding-top: 20px;">
+                <a href="${project.externalLink}" target="_blank" class="card-cta" style="text-decoration: none; display: inline-block;">
+                    View HCD ↗
+                </a>
+            </div>
+        `;
+    }
 
-    // Populate modal with detailed project data
+    // --- 4. POPULATE MODAL ---
     modalBody.innerHTML = `
         <h2>${project.title}</h2>
     
         <h3>Showcase</h3>
-        <div class="project-gallery">${galleryHtml}</div>
-
-        <p>${project.longDescription}</p>
-        <div class="detail-meta">
-            <p><strong>Type:</strong> ${project.type}</p>
-            <p><strong>Status:</strong> ${project.status}</p>
+        <div class="project-gallery ${mainClass}">
+            ${mainGalleryHtml}
         </div>
-        <h3>Key Technologies</h3>
+
+        ${secondGalleryHtml}
+
+        <p style="margin-top: 30px;">${project.longDescription}</p>
+        
+        <div class="detail-meta">
+            <p><strong>Type:</strong> ${project.type || 'Project'}</p>
+            <p><strong>Status:</strong> ${project.status || 'Completed'}</p>
+        </div>
+        
+        <h3>Application</h3>
         <div class="card-tech">${techBadges}</div>
+
+        ${linkButtonHtml}
     `;
 
-    // Display the modal and prevent background scrolling
+    // Display the modal
     projectModal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    modalBody.scrollTop = 0; // Scroll modal content to top on open
+    modalBody.scrollTop = 0;
 }
 
 function closeModal() {
