@@ -679,46 +679,54 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --- Smart Scroll Button Logic ---
-const scrollBtn = document.getElementById('smartScrollBtn');
+/* =========================================
+   SMART SCROLL BUTTON (SAFE VERSION)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Try to find the button
+    const scrollBtn = document.getElementById('smartScrollBtn');
 
-function updateScrollButton() {
-    // Calculate total scrollable height vs current position
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const currentScroll = window.scrollY;
+    // 2. Only run the logic if the button ACTUALLY exists
+    if (scrollBtn) {
 
-    // Check if we are past the halfway point of the page
-    if (currentScroll > totalHeight / 2) {
-        // We are near the bottom -> Switch to "UP" mode
-        scrollBtn.innerHTML = "⬆";
-        scrollBtn.title = "Scroll to Top";
-        scrollBtn.setAttribute('data-dir', 'up');
-    } else {
-        // We are near the top -> Switch to "DOWN" mode
-        scrollBtn.innerHTML = "⬇";
-        scrollBtn.title = "Scroll to Bottom";
-        scrollBtn.setAttribute('data-dir', 'down');
-    }
-}
+        function updateScrollButton() {
+            // Robust height calculation
+            const totalHeight = Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight
+            ) - window.innerHeight;
 
-if (scrollBtn) {
-    // Add Click Event
-    scrollBtn.addEventListener('click', () => {
-        const direction = scrollBtn.getAttribute('data-dir');
+            const currentScroll = window.scrollY || window.pageYOffset;
 
-        if (direction === 'up') {
-            // Scroll to Top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            // Scroll to Bottom
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            if (currentScroll > totalHeight / 2) {
+                scrollBtn.innerHTML = "⬆";
+                scrollBtn.title = "Scroll to Top";
+                scrollBtn.setAttribute('data-dir', 'up');
+            } else {
+                scrollBtn.innerHTML = "⬇";
+                scrollBtn.title = "Scroll to Bottom";
+                scrollBtn.setAttribute('data-dir', 'down');
+            }
         }
-    });
 
-    // Update button appearance whenever the user scrolls
-    window.addEventListener('scroll', updateScrollButton);
+        // Click Event
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const direction = scrollBtn.getAttribute('data-dir');
+            if (direction === 'up') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
 
-    // Initialize on page load
-    updateScrollButton();
-}
+        // Scroll Listener
+        window.addEventListener('scroll', updateScrollButton);
+        updateScrollButton(); // Init
+
+    } else {
+        // Log a warning but DO NOT CRASH the site
+        console.warn("Smart Scroll Button not found in HTML. Skipping feature.");
+    }
+});
 
