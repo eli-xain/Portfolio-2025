@@ -15,6 +15,7 @@ https://templatemo.com/tm-600-prism-flux
     box-sizing: border-box;
 }
 
+/*
 :root {
     --primary-black: #0a0a0a;
     --carbon-dark: #121212;
@@ -30,6 +31,29 @@ https://templatemo.com/tm-600-prism-flux
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-dim: #808080;
+}
+*/
+
+:root {
+    /* Backgrounds: Shifted from pure black to Deep Violet/Black for a cooler feel */
+    --primary-black: #05040a; 
+    --carbon-dark: #0f0a14;
+    --carbon-medium: #1b1224;
+    --carbon-light: #2d1f3a;
+    --metal-dark: #453055;
+    --metal-light: #5e4570;
+
+    /* Accents: The "Pinkish Purple Cool" Palette */
+    --accent-red: #ff0080;    /* Hot Pink (Replaces Red) */
+    --accent-blue: #4e00ff;   /* Electric Indigo */
+    --accent-green: #00ffea;  /* Cyan-Turquoise (Cooler than standard green) */
+    --accent-purple: #bd00ff; /* Vibrant Violet */
+    --accent-cyan: #e0ffff;   /* Icy White-Cyan */
+    
+    /* Text */
+    --text-primary: #ffffff;
+    --text-secondary: #e0d4fc; /* Lavender tinted white */
+    --text-dim: #9f90b0;       /* Muted purple grey */
 }
 
 html {
@@ -57,6 +81,7 @@ body {
     }
 
     /* Animated Grid Overlay */
+    /*
     body::after {
         content: '';
         position: fixed;
@@ -65,6 +90,22 @@ body {
         width: 100%;
         height: 100%;
         background-image: linear-gradient(rgba(255, 51, 51, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 51, 51, 0.05) 2px, transparent 2px);
+        background-size: 150px 150px;
+        animation: gridMove 20s linear infinite;
+        z-index: -1;
+        opacity: 0.5;
+    }
+    */
+    /* Animated Grid Overlay - Updated to Pink */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Updated RGBA to Pink (255, 0, 128) */
+        background-image: linear-gradient(rgba(255, 0, 128, 0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 0, 128, 0.07) 2px, transparent 2px);
         background-size: 150px 150px;
         animation: gridMove 20s linear infinite;
         z-index: -1;
@@ -339,6 +380,7 @@ body {
     }
 
 /* Hero Section with 3D Carousel */
+/*
 .hero {
     min-height: 100vh;
     display: inline;
@@ -348,18 +390,32 @@ body {
     padding: 100px 20px 80px;
     background: radial-gradient(ellipse at center, rgba(153, 69, 255, 0.1) 0%, transparent 50%);
 }
+*/
+/* Hero Section with 3D Carousel */
+.hero {
+    min-height: 100vh;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px 20px 80px;
+    /* Updated glow to Neon Purple/Pink */
+    background: radial-gradient(ellipse at center, rgba(189, 0, 255, 0.15) 0%, transparent 60%);
+}
 
 .carousel-container {
     width: 100%;
     max-width: 1600px;
-    height: 650px;
+    height: 750px;
     perspective: 1200px;
     position: relative;
     padding-top: -50px;
+    overflow: hidden; 
+    margin: 0 auto;
 }
 
 .carousel {
-    width: 120%;
+    width: 100%;
     height: 120%;
     top: -10%;
     position: relative;
@@ -368,10 +424,10 @@ body {
 
 .carousel-item {
     position: absolute;
-    width: 400px;
-    height: 500px;
+    width: 450px;
+    height: 562.5px;
     left: 50%;
-    top: 50%;
+    top: 48%;
     transform-style: preserve-3d;
     transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
     cursor: pointer;
@@ -423,7 +479,7 @@ body {
 
 .card-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: var(--carbon-dark);
     border-radius: 10px;
     margin-bottom: 20px;
@@ -504,8 +560,8 @@ body {
 /* Carousel Controls */
 .carousel-controls {
     position: absolute;
-    bottom: -70px;
-    left: 60%;
+    bottom: 20px;
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
@@ -538,7 +594,7 @@ body {
 .carousel-indicators {
     position: absolute;
     top: 30px;
-    left: 60%;
+    left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
@@ -1608,6 +1664,35 @@ a.info-item {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+
+    position: relative; 
+    z-index: 2;
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* REPLACE 'images/your-image.jpg' with your actual file path */
+    background-image: url('images/intro-bg.png');
+    
+    /* This makes it responsive and cover the whole area */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Adjust transparency: 0.1 is very faint, 1.0 is full visibility */
+    opacity: 0.3; 
+    
+    /* Ensures it sits behind the text */
+    z-index: 1; 
+    
+    /* Optional: Blend mode for a cool effect with the dark background color */
+    mix-blend-mode: overlay; 
 }
 
 .intro-left {
@@ -1911,7 +1996,7 @@ a.info-item {
     border: 1px solid var(--accent-green);
     border-radius: 20px;
     color: var(--accent-green);
-    font-size: 11px;
+    font-size: 20px;
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
@@ -2004,4 +2089,20 @@ a.info-item {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Prevent dragging images and videos */
+img, video {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    
+    /* Prevent highlighting/selecting them */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }

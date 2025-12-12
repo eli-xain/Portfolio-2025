@@ -16,7 +16,7 @@ const portfolioData = [
         title: 'Illustrations',
         description: '',
         longDescription: '',
-        image: 'images/illus/Sylveon.png',
+        image: 'images/illus/OC-Art.png',
         tech: ['Clip Studio Paint', 'Adobe Photoshop', 'Procreate', 'Medibang', 'Portraits', 'Stylized Art', 'Semi-Realism', 'Design'],
         galleryImages: [
             'images/illus/D2 Exchange Gift(Art).png',
@@ -30,13 +30,21 @@ const portfolioData = [
             'images/illus/FanArt.png',
             'images/illus/Female Mapua - Pokemon.png',
             'images/illus/Male Mapua - Pokemon.png',
-            'images/illus/OC-Art.png',
+            
             'images/illus/RobertFanart.png',
             'images/illus/AngryArt.png',
             'images/illus/CharacterDesign.png',
             'images/illus/Self-Portrait2.png',
             'images/illus/Self-Portrait3.png'
         ],
+         layout: 'single',
+        secondGallery: {
+        title: '', 
+        layout: 'list',                     
+        images: [
+            'images/illus/OC-Art.png'
+        ]
+        },
         status: "N/A",
         type: "Portfolio Showcase" 
     },
@@ -46,7 +54,7 @@ const portfolioData = [
         description: '',
         longDescription: '',
         image: 'images/game-sprite/Splice Art2.png',
-        tech: ['Clip Studio Paint'],
+        tech: ['Clip Studio Paint', 'Rigging','Splice', 'Animation'],
         galleryImages: [
             'images/game-sprite/Didon Sprite.png',
             'images/game-sprite/Sanguin Saplings Sprites.gif',
@@ -103,29 +111,61 @@ const portfolioData = [
             'images/3d/Academic3D-3.jpg',
             'images/3d/IsometricRoom3D.jpg',
             'images/3d/IsometricRoom3D-2.jpg',
-            'images/3d/MGC-3DLogo.jpg'
+            'images/3d/MGC-3DLogo.jpg',
+            'images/3d/Model1.png',
+            'images/3d/Model2.png'
         ],
         status: "N/A",
         type: "Portfolio Showcase"
     },
-    //{
-     //   id: 5,
-    //    title: 'Graphic Design (UI/Marketing)',
-    //    description: 'Big data processing platform capable of analyzing petabytes of information in real-time.',
-     //   longDescription: 'Data Nexus is a scalable platform engineered to ingest, process, and analyze petabytes of heterogeneous data streams. Utilizing a unified pipeline with Apache Spark and Kafka, it delivers real-time insights for mission-critical applications, transforming raw information into actionable business intelligence.',
-    //    image: 'images/data-nexus.jpg',
-     //   tech: ['Apache Spark', 'Hadoop', 'Kafka'],
-    //    galleryImages: ['images/data-nexus.jpg', 'images/iot-matrix.jpg', 'images/neural-network.jpg'] // Placeholder gallery
-    //},
-    //{
-    //    id: 6,
-    //    title: 'Academic Game Works',
-    //    description: 'Augmented reality system for immersive data visualization and interactive experiences.',
-    //    longDescription: 'The AR Interface projects complex data models and interactive controls directly into the user\'s field of view. Built with Unity and custom Computer Vision algorithms, it enhances productivity in engineering and design by allowing users to manipulate 3D models and real-time telemetry with natural gestures.',
-    //    image: 'images/ar-interface.jpg',
-    //    tech: ['Unity', 'ARCore', 'Computer Vision'],
-    //   galleryImages: ['images/ar-interface.jpg', 'images/cyber-defense.jpg', 'images/blockchain-vault.jpg'] // Placeholder gallery
-    //}
+    {
+        id: 5,
+        title: 'Graphic Design (UI/Marketing)',
+        description: '',
+        longDescription: 'Exploring to marketing and design intricacies of what goes in the screen for the people led me to explore various Graphic Design for Social Medias, Websites, and Applications. <br><br>Here are FIGMA Hyperlinks of my work:<br><a href="https://www.figma.com/design/WxZ8xlalvdz3a9QofaEo6k/WIREFRAME-SERR-SHOP?node-id=2-9789&m=draw" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">COSMETIC SHOP: SERR Shop</a><br><a href="https://www.figma.com/proto/GwMkPUibJoI4doWxu9qTrX/MGC-WIREFRAME-ADMIN?node-id=2-9789&starting-point-node-id=1%3A5197" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">NON-Profit ORG Website</a><br><a href="https://www.figma.com/proto/LD7eugNBPwllW6hnEdn8IL/Prototype?node-id=116-68&starting-point-node-id=116%3A65" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">PokePET! Productivity App</a><br><a href="https://www.figma.com/proto/mNxW5ulQLYSigrOje9Bnuf/Wireframe---Prototype?node-id=3-1855&p=f&m=draw&scaling=min-zoom&content-scaling=fixed&page-id=4%3A2&starting-point-node-id=3%3A1855" target="_blank" style="color: var(--accent-cyan); text-decoration: underline;">AralKADA!: Connect with Other Study Buddies!</a>',
+        image: 'images/graphic/1.jpg',
+        tech: ['Canva','Figma', 'Photoshop', 'Clip Studio Paint', 'GDevelop', 'UI/UX Design', 'Pitching', 'Marketing', 'Graphic Design', 'Multimedia' ],
+        galleryImages: [
+            'images/graphic/1.jpg',
+            'images/graphic/2.jpg',
+            'images/graphic/3.jpg',
+            'images/graphic/4.png',
+            'images/graphic/5.jpg',
+            'images/graphic/6.jpg',
+            'images/graphic/Figma1.png',
+            'images/graphic/Figma2.png',
+            'images/graphic/Figma3.png',
+            'images/graphic/Figma4.png',
+            'images/graphic/Figma5.png',
+            'images/graphic/Figma6.png',
+            'images/graphic/Figma7.png'
+        ],
+        status: "N/A",
+        type: "Portfolio Showcase"
+    },
+    {
+        id: 6,
+        title: 'Academic Works (Game/Animation)',
+        description: '',
+        longDescription: 'Under as Academic Requirement, here are some of the game mechanics and unity practices activities I accomplished as Game Development of Mapua University. We also explored other creative projects that explores other Game Development aspects.',
+        image: 'images/acad/3.gif',
+        tech: ['Unity', 'Technical Artist', '2D Unity', '3D Unity','Game Physics', 'Gameplay mechanics', 'Scene Management'],
+        secondGallery: {
+        title: 'GIF', 
+        layout: 'list',                     
+        images: [
+            'images/acad/1.gif',
+            'images/acad/2.gif',
+            'images/acad/3.gif',
+            'images/acad/4.gif',
+            'images/acad/HoneyWorks! Anime_Parody Song.mp4',
+            'images/acad/Illit - Magnetic (VILLANUEVA Animation).mp4',
+            'images/acad/CVSR_VideoAD.mp4'
+        ]
+        },
+        status: "N/A",
+        type: "Portfolio Showcase"
+    }
 ];
 
 // NEW Data for the Main Projects (Pillars)
@@ -135,18 +175,38 @@ const pillarData = [
         title: 'Ashbone',
         longDescription: 'Play as a shadow-born hunter in the decaying city of Ashbone, tasked by a White Lady to purge corrupted Marbles. Master swift hack-and-slash combat and the devastating Black Flame to restore balance. But beware: a mysterious purple figure from your past waits in the darkness, forcing you to question the truth of your mission.',
         externalLink: 'https://drive.google.com/file/d/1fDff2garUGvA7fkIZmbcSUcQOWmq0iKe/view?usp=sharing',
-        tech: ['Unity', 'C#', 'Clip Studio Paint', 'Figma', 'UI/UX Design', 'Moho Animation', 'Character Design', 'Technical Artist/Programmer', 'Game Design', 'Game Pitch'],
-        galleryImages: [''],
+        tech: ['Unity', 'C#', 'Clip Studio Paint', 'Figma', 'UI/UX Design', 'Moho Animation', 'Rigging', 'Character Design', 'Technical Artist/Programmer', 'Game Design', 'Game Pitch'],
+        layout: 'single',
+        secondGallery: {
+        title: 'Gameplay', 
+        layout: 'list',                     
+        images: [
+            'images/game/AB_1.gif',
+            'images/game/AB_2.gif',
+            'images/game/AB_3.gif',
+            'images/game/AB_4.gif'
+        ]
+        },
+        galleryImages: ['images/game/AshboneASSET.png', 'images/game/AshboneMENU.png', 'images/game/AshboneScreenshot.png'],
         status: "On-Hold",
         type: "Game Development"
     },
     {
         id: 'Karinder-NYA!',
         title: 'Karinder-NYA!',
-        longDescription: 'Play as Aling Kitty, a cute middle-aged cat lady, surviving her way through cooking popular Karinderya Menus! Ensure her in overcoming challenges and sell enough for each day through a full interactive and fun game.',
+        longDescription: 
+        'Play as Aling Kitty, a cute middle-aged cat lady, surviving her way through cooking popular Karinderya Menus! Ensure her in overcoming challenges and sell enough for each day through a full interactive and fun game.',
         externalLink: 'https://drive.google.com/file/d/10239Y7Mq_dI9AHg-8TxRHAPoODMGDYbm/view?usp=sharing',
-        tech: ['Unity', 'C#', 'Blender', 'Clip Studio Paint', 'Figma', 'Autodesk Maya', 'Game Design', 'Environment Design', 'UI/UX', 'Technical Programmer', 'Task Management'],
-        galleryImages: [''],
+        tech: ['Unity', 'C#', 'Blender', 'Clip Studio Paint', 'Figma', 'Autodesk Maya', 'Game Design', 'Environment Design', 'UI/UX', 'Technical Programmer', 'Task Management', 'Game Producer'],
+        secondGallery: {
+        layout: 'list',                     
+        images: [
+            'images/game/KD_1.gif',
+            'images/game/KD_2.gif',
+            'images/game/KD_3.gif',
+            'images/game/KD_Environment.png'
+        ]
+        },
         status: "Ongoing as Capstone",
         type: "Game Production"
     },
@@ -155,8 +215,7 @@ const pillarData = [
         title: 'Another I',
         longDescription: 'Navigate Iris between the truths and visions under the weight of her psyche. Her quest to form her first true connection becomes a battle against the encroaching darkness of her mind and impending graduation that pushes her over the edge.',
         externalLink: 'https://drive.google.com/file/d/16oh94juQc82K_J1_8PHvMxN8ogVsKLTG/view?usp=sharing',
-        tech: ['Clip Studio Paint', 'Game Design', 'Character Design', 'Project Management'],
-        galleryImages: [''],
+        tech: ['Clip Studio Paint', 'Game Design', 'Level Design', 'Storyline','Character Design', 'Project Management'],
         status: "Discontinued",
         type: "Game Design"
     }
@@ -167,18 +226,21 @@ const activityData = [
     {
         id: 'sanguine',
         title: 'SANGUINE SAPLINGS',
+        longDescription:'Won an award as one of the Best Game Designs for Game Jam+ 2023 Manila at Indie Games Group Philippines',
         tech: ['Game Jam', 'Character Design', '2D Sprite Animation'],
         itchioUrl: 'https://team-mysclick.itch.io/sanguine-saplings',
     },
     {
         id: 'matchup',
-        title: 'MATCH-UP CHAMPIONSHIPP',
-        tech: ['Character Design', 'Visual Novel Sprites', 'Splice', 'Task Assignment'],
+        title: 'MATCH-UP CHAMPIONSHIP',
+        longDescription:'Exhibited in the Philippines Game Dev Expo 2024 under Mapua Game Consensus',
+        tech: ['Philippine Game Dev Expo 2024','Character Design', 'Visual Novel Sprites', 'Splice', 'Task Assignment'],
         itchioUrl: 'https://mapuagameconsensus.itch.io/match-up-championship',
     },
     {
         id: 'poperfish',
-        title: 'POP\'ER FISH!',
+        title: 'POP ER FISH!',
+        longDescription:'Won an award as Top 5 Game of The Jam (Best Game) and Best Dressed of Global Game Jam 2025 at Benilde On-Site Host',
         tech: ['Global Game Jam', 'Assistant Leader', '2D Sprite Animation', 'Splash Menu Art', 'UI Assistant'],
         itchioUrl: 'https://dyke-dog.itch.io/pop-er-fish',
     }
@@ -334,13 +396,22 @@ function updateCarousel() {
         let spacing3 = 750;
 
         if (isMobile) {
-            spacing1 = 280;  // Was 400, now 100px closer
-            spacing2 = 420;  // Was 600, now 180px closer
-            spacing3 = 550;  // Was 750, now 200px closer
+            // Mobile (approx < 768px)
+            spacing1 = 280; 
+            spacing2 = 420;
+            spacing3 = 550;
         } else if (isTablet) {
-            spacing1 = 340;
-            spacing2 = 520;
-            spacing3 = 650;
+            // Tablet (approx 769px - 1024px)
+            // Use percentage of window width to ensure it fits any tablet size
+            spacing1 = window.innerWidth * 0.30; 
+            spacing2 = window.innerWidth * 0.50; 
+            spacing3 = window.innerWidth * 0.70; 
+        } else {
+            // Desktop (> 1024px)
+            // Also helpful to make desktop slightly responsive if window is resized
+             spacing1 = 400;
+             spacing2 = 600;
+             spacing3 = 750;
         }
 
         if (absOffset === 0) {
@@ -471,18 +542,28 @@ function openProjectModal(projectIdentifier) {
         return;
     }
 
-    // --- 1. SETUP GALLERIES (From previous steps) ---
-    const mainClass = (project.layout === 'list') ? 'list-view' : '';
-    const mainGalleryHtml = (project.galleryImages || []).map(imgSrc =>
-        `<img src="${imgSrc}" alt="${project.title} image" class="gallery-image">`
-    ).join('');
+    // --- 1. SETUP GALLERIES (Updated for MP4 Support) ---
+    
+    // Helper function to check for video
+    const createMediaItem = (src) => {
+        if (src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')) {
+            // UPDATED LINE: Added controlsList="nodownload", oncontextmenu="return false;" and disablePictureInPicture
+            return `<video src="${src}" controls controlsList="nodownload" oncontextmenu="return false;" disablePictureInPicture class="gallery-image" style="width: 100%; height: auto; display: block; border-radius: 10px; margin-bottom: 20px;"></video>`;
+        } else {
+            // It's an image!
+            return `<img src="${src}" alt="Project media" class="gallery-image">`;
+        }
+    };
 
+    // Update Main Gallery generation
+    const mainClass = (project.layout === 'list') ? 'list-view' : '';
+    const mainGalleryHtml = (project.galleryImages || []).map(src => createMediaItem(src)).join('');
+
+    // Update Second Gallery generation
     let secondGalleryHtml = '';
     if (project.secondGallery) {
         const secClass = (project.secondGallery.layout === 'list') ? 'list-view' : '';
-        const secImages = project.secondGallery.images.map(imgSrc => 
-            `<img src="${imgSrc}" alt="Secondary gallery image" class="gallery-image">`
-        ).join('');
+        const secImages = project.secondGallery.images.map(src => createMediaItem(src)).join('');
 
         secondGalleryHtml = `
             <h3 style="margin-top: 40px; color: var(--accent-cyan);">
@@ -529,7 +610,7 @@ function openProjectModal(projectIdentifier) {
             <p><strong>Status:</strong> ${project.status || 'Completed'}</p>
         </div>
         
-        <h3>Application</h3>
+        <h3>Application/Roles Played</h3>
         <div class="card-tech">${techBadges}</div>
 
         ${linkButtonHtml}
@@ -833,3 +914,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// --- PROTECTION SCRIPT ---
+
+// Disable Right-Click on Images and Videos
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+        e.preventDefault();
+    }
+});
