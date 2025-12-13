@@ -44,11 +44,11 @@
             </a>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#intro" class="nav-link active">EPV Xain</a></li>
-                <li><a href="#home" class="nav-link">Works</a></li>
-                <li><a href="#about" class="nav-link">Projects</a></li>
-                <li><a href="#stats" class="nav-link">Activities</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#intro" onclick="gtag('event', 'nav_click', {'page-section': 'home'})" class="nav-link active">EPV Xain</a></li>
+                <li><a href="#home" onclick="gtag('event', 'nav_click', {'page-section': 'gallery'})" class="nav-link">Works</a></li>
+                <li><a href="#about" onclick="gtag('event', 'nav_click', {'page-section': 'proj'})" class="nav-link">Projects</a></li>
+                <li><a href="#stats" onclick="gtag('event', 'nav_click', {'page-section': 'act'})" class="nav-link">Activities</a></li>
+                <li><a href="#skills" onclick="gtag('event', 'nav_click', {'page-section': 'skill'})" class="nav-link">Skills</a></li>
             </ul>
 
             <div class="menu-toggle" id="menuToggle">
@@ -119,7 +119,7 @@
             <div class="philosophy-pillars">
                 <div class="pillar">
                     <div class="stat-media">
-                        <img src="images/game/AshboneLogo.png" alt="Sanguine Saplings Art">
+                        <img src="images/game/AshboneLogo.png" alt="Ashbone Logo Art">
                     </div>
                     <h3 class="pillar-title">Ashbone</h3>
                     <p class="pillar-description">
@@ -127,12 +127,12 @@
                        <br>
                        HCD, GDD, Alpha-Prototype Build 
                     </p>
-                    <button class="pillar-more-btn" data-project="Ashbone">More</button>
+                    <button class="pillar-more-btn" onclick="gtag('event', 'proj-view', {'proj-name': 'ashbone'})" data-project="Ashbone">More</button>
                 </div>
 
                 <div class="pillar">
                     <div class="stat-media">
-                        <img src="images/game/Karinder-NYALogo.png" alt="Sanguine Saplings Art">
+                        <img src="images/game/Karinder-NYALogo.png" alt="Karinder-NYAW! Art">
                     </div>
                     <h3 class="pillar-title">Karinder-NYA!</h3>
                     <p class="pillar-description">
@@ -140,12 +140,12 @@
                         <br>
                         HCD, GDD, Alpha Build
                       </p>
-                    <button class="pillar-more-btn" data-project="Karinder-NYA!">More</button>
+                    <button class="pillar-more-btn" onclick="gtag('event', 'proj-view', {'proj-name': 'karindernya'})" data-project="Karinder-NYA!">More</button>
                 </div>
 
                 <div class="pillar">
                     <div class="stat-media">
-                        <img src="images/game/AnotherILogo.png" alt="Sanguine Saplings Art">
+                        <img src="images/game/AnotherILogo.png" alt="Another I Art">
                     </div>
                     <h3 class="pillar-title">Another I</h3>
                     <p class="pillar-description">
@@ -153,7 +153,7 @@
                        <br>
                        HCD, GDD
                     </p>
-                    <button class="pillar-more-btn" data-project="Another I">More</button>
+                    <button class="pillar-more-btn" onclick="gtag('event', 'proj-view', {'proj-name': 'ashbone'})" data-project="Another I">More</button>
                 </div>
             </div>
 
@@ -308,10 +308,10 @@
                     NOTE: Nothing from this website is developed and coded by Elisha P. Villanueva (me). The only original works are the projects, artworks, details, and information showcased. It is an amazing template from TemplateMo titled  <a href="https://templatemo.com/tm-600-prism-flux" rel="nofollow" target="_blank">600 Prism Flux</a>
                 </p>
                 <div class="footer-social">
-                    <a href="https://www.facebook.com/lilvanellope" class="social-icon">f</a>
-                    <a href="https://www.linkedin.com/in/elishapv/" class="social-icon">in</a>
-                    <a href="https://github.com/eli-xain" class="social-icon">git</a>
-                    <a href="https://eli-xain.itch.io/" class="social-icon">itch.io</a>
+                    <a href="https://www.facebook.com/lilvanellope" onclick="gtag('event', 'contact_social', {'social-media': 'fb'})" class="social-icon">f</a>
+                    <a href="https://www.linkedin.com/in/elishapv/" onclick="gtag('event', 'contact_social', {'social-media': 'lin'})" class="social-icon">in</a>
+                    <a href="https://github.com/eli-xain" onclick="gtag('event', 'contact_social', {'social-media': 'git'})" class="social-icon">git</a>
+                    <a href="https://eli-xain.itch.io/" onclick="gtag('event', 'contact_social', {'social-media': 'itch'})" class="social-icon">itch.io</a>
                 </div>
             </div>
         </div> <div class="footer-bottom">
